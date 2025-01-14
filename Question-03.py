@@ -35,12 +35,29 @@ def draw_branch(t, branch_length, angle_left, angle_right, depth, reduction_fact
         t.circle(10)  
         t.end_fill()
 
+def draw_sun(t):
+    #Here we are drawing a sun in the corner
+    t.penup()
+    #putting the position of the sun in the top right corner
+    t.goto(150, 150)  
+    t.pendown()
+    #Setting both the pen and fill color to yellow
+    t.color("yellow", "yellow")  
+    t.begin_fill()
+    #Putting the Sun size as 60
+    t.circle(60)  
+    t.end_fill()
 
 def main():
-
+    screen = turtle.Screen()
+    #Setting the background color to sky blue
+    screen.bgcolor("sky blue")
     
     t = turtle.Turtle()
     t.speed(0)
+
+    #Drawing the sun
+    draw_sun(t)
 
 
     #Taking the inputs from the keyboard as mentioned in the question
@@ -60,6 +77,7 @@ def main():
     draw_branch(t, starting_length, angle_left, angle_right, depth, reduction_factor, depth)
 
     #Closing the drawing
+    screen.mainloop()
     t.hideturtle()
 
 
